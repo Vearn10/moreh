@@ -74,19 +74,80 @@
             </div>
 
             <!-- Public View Navigation Links (Pill Style) -->
-            <nav
-                class="hidden md:flex space-x-1 bg-slate-100 p-1 rounded-xl border border-slate-200 text-xs font-bold text-slate-600">
-                <a href="#home"
-                    class="px-4 py-2 rounded-lg hover:text-mgicBlue hover:bg-white/60 transition-all">Home</a>
-                <a href="#announcements"
-                    class="px-4 py-2 rounded-lg hover:text-mgicBlue hover:bg-white/60 transition-all">Announcements</a>
-                <a href="#programs"
-                    class="px-4 py-2 rounded-lg hover:text-mgicBlue hover:bg-white/60 transition-all">Programs</a>
-                <a href="#about" class="px-4 py-2 rounded-lg hover:text-mgicBlue hover:bg-white/60 transition-all">About
-                    Us</a>
-                <a href="inquiry.php"
-                    class="px-4 py-2 rounded-lg hover:text-mgicBlue hover:bg-white/60 transition-all">Inquiry</a>
-            </nav>
+            <div class="relative">
+                <div class="flex items-center justify-between">
+
+                    <button id="mobileMenuBtn"
+                        class="flex md:hidden items-center justify-center w-9 h-9 rounded-xl bg-slate-100 border border-slate-200 text-slate-600 hover:text-mgicBlue hover:bg-white/60 transition-all focus:outline-none"
+                        aria-label="Toggle Menu">
+                        <i id="menuIcon" class="fa-solid fa-bars text-sm"></i>
+                    </button>
+
+                    <nav
+                        class="hidden md:flex space-x-1 bg-slate-100 p-1 rounded-xl border border-slate-200 text-xs font-bold text-slate-600">
+                        <a href="#home"
+                            class="px-4 py-2 rounded-lg hover:text-mgicBlue hover:bg-white/60 transition-all">Home</a>
+                        <a href="#announcements"
+                            class="px-4 py-2 rounded-lg hover:text-mgicBlue hover:bg-white/60 transition-all">Announcements</a>
+                        <a href="#programs"
+                            class="px-4 py-2 rounded-lg hover:text-mgicBlue hover:bg-white/60 transition-all">Programs</a>
+                        <a href="#about"
+                            class="px-4 py-2 rounded-lg hover:text-mgicBlue hover:bg-white/60 transition-all">About
+                            Us</a>
+                        <a href="inquiry.php"
+                            class="px-4 py-2 rounded-lg hover:text-mgicBlue hover:bg-white/60 transition-all">Inquiry</a>
+                    </nav>
+                </div>
+
+                <div id="mobileMenu"
+                    class="hidden absolute top-full right-0 left-0 mt-2 p-2 bg-white/90 backdrop-blur-md rounded-2xl border border-slate-200/80 shadow-lg shadow-slate-100/40 flex flex-col space-y-1 text-xs font-bold text-slate-600 z-50 transition-all duration-300">
+                    <a href="#home"
+                        class="mobile-link px-4 py-3 rounded-xl hover:text-mgicBlue hover:bg-slate-50 transition-all"><i
+                            class="fa-solid fa-house mr-2 opacity-70"></i>Home</a>
+                    <a href="#announcements"
+                        class="mobile-link px-4 py-3 rounded-xl hover:text-mgicBlue hover:bg-slate-50 transition-all"><i
+                            class="fa-solid fa-bullhorn mr-2 opacity-70"></i>Announcements</a>
+                    <a href="#programs"
+                        class="mobile-link px-4 py-3 rounded-xl hover:text-mgicBlue hover:bg-slate-50 transition-all"><i
+                            class="fa-solid fa-graduation-cap mr-2 opacity-70"></i>Programs</a>
+                    <a href="#about"
+                        class="mobile-link px-4 py-3 rounded-xl hover:text-mgicBlue hover:bg-slate-50 transition-all"><i
+                            class="fa-solid fa-circle-info mr-2 opacity-70"></i>About Us</a>
+                    <a href="inquiry.php"
+                        class="mobile-link px-4 py-3 rounded-xl text-white bg-mgicOrange hover:bg-orange-600 shadow-sm transition-all"><i
+                            class="fa-solid fa-paper-plane mr-2"></i>Inquiry</a>
+                </div>
+            </div>
+
+            <script>
+                const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+                const mobileMenu = document.getElementById('mobileMenu');
+                const menuIcon = document.getElementById('menuIcon');
+                const mobileLinks = document.querySelectorAll('.mobile-link');
+
+                // Function to toggle menu state
+                function toggleMenu() {
+                    mobileMenu.classList.toggle('hidden');
+
+                    // Switch between hamburger bars icon and an 'X' close mark smoothly
+                    if (mobileMenu.classList.contains('hidden')) {
+                        menuIcon.className = "fa-solid fa-bars text-sm";
+                    } else {
+                        menuIcon.className = "fa-solid fa-xmark text-sm";
+                    }
+                }
+
+                mobileMenuBtn.addEventListener('click', toggleMenu);
+
+                // Automatically close the menu container when a user clicks any anchor link
+                mobileLinks.forEach(link => {
+                    link.addEventListener('click', () => {
+                        if (!mobileMenu.classList.contains('hidden')) {
+                            toggleMenu();
+                        }
+                    });
+                });
+            </script>
 
             <!-- Campus Badge Location -->
             <div
