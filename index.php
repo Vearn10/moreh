@@ -61,85 +61,133 @@
     <div class="fixed top-12 left-0 right-0 z-40 px-4 sm:px-6 lg:px-8">
         <header
             class="max-w-7xl mx-auto glass-card rounded-2xl px-6 h-20 flex items-center justify-between shadow-lg shadow-slate-200/50">
-            <!-- Logo & Title Area -->
-            <div class="flex items-center space-x-3">
-                <img src="354264045_643093787844317_3677144960425737849_n.jpg" alt="MGIC Logo Emblem"
-                    class="w-11 h-11 rounded-full object-cover border-2 border-mgicOrange shadow-sm">
-                <div>
-                    <h1 class="text-sm font-black text-mgicBlue tracking-wider leading-none">MOREH GLOBAL</h1>
-                    <span
-                        class="text-[10px] font-bold text-mgicOrange uppercase tracking-widest block mt-0.5">Innovative
-                        College</span>
-                </div>
-            </div>
 
             <!-- Public View Navigation Links (Pill Style) -->
-            <div class="relative">
-                <div class="flex items-center justify-between">
+            <div class="relative w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-4">
+                <div
+                    class="flex items-center justify-between px-6 h-20 bg-white/70 backdrop-blur-md rounded-2xl border border-slate-200/80 shadow-md shadow-slate-100/40">
 
+                    <!-- Logo / Title Area -->
+                    <div class="flex items-center space-x-3 select-none">
+                        <img src="354264045_643093787844317_3677144960425737849_n.jpg" alt="MGIC Logo"
+                            class="w-10 h-10 rounded-full object-cover border-2 border-mgicOrange shadow-sm">
+                        <div>
+                            <h1 class="text-xs font-black text-mgicBlue tracking-wider leading-none uppercase">Moreh
+                                Global</h1>
+                            <span
+                                class="text-[9px] font-bold text-mgicOrange uppercase tracking-widest block mt-0.5">Innovative
+                                College</span>
+                        </div>
+                    </div>
+
+                    <!-- Premium Hamburger Interactive Button (Visible on Mobile Only) -->
                     <button id="mobileMenuBtn"
-                        class="flex md:hidden items-center justify-center w-9 h-9 rounded-xl bg-slate-100 border border-slate-200 text-slate-600 hover:text-mgicBlue hover:bg-white/60 transition-all focus:outline-none"
-                        aria-label="Toggle Menu">
-                        <i id="menuIcon" class="fa-solid fa-bars text-sm"></i>
+                        class="group flex md:hidden flex-col items-center justify-center space-y-1 w-10 h-10 rounded-xl bg-slate-50 border border-slate-200/60 hover:bg-white transition-all duration-300 focus:outline-none z-50"
+                        aria-label="Toggle Navigation">
+                        <span id="line1"
+                            class="w-5 h-0.5 bg-slate-600 rounded-full transition-all duration-300 transform origin-center group-hover:bg-mgicBlue"></span>
+                        <span id="line2"
+                            class="w-5 h-0.5 bg-slate-600 rounded-full transition-all duration-300 group-hover:bg-mgicBlue"></span>
+                        <span id="line3"
+                            class="w-5 h-0.5 bg-slate-600 rounded-full transition-all duration-300 transform origin-center group-hover:bg-mgicBlue"></span>
                     </button>
 
+                    <!-- Desktop Navigation Links -->
                     <nav
-                        class="hidden md:flex space-x-1 bg-slate-100 p-1 rounded-xl border border-slate-200 text-xs font-bold text-slate-600">
+                        class="hidden md:flex items-center space-x-1 bg-slate-100/80 p-1 rounded-xl border border-slate-200/40 text-xs font-bold text-slate-600">
                         <a href="#home"
-                            class="px-4 py-2 rounded-lg hover:text-mgicBlue hover:bg-white/60 transition-all">Home</a>
+                            class="px-4 py-2 rounded-lg hover:text-mgicBlue hover:bg-white transition-all duration-200">Home</a>
                         <a href="#announcements"
-                            class="px-4 py-2 rounded-lg hover:text-mgicBlue hover:bg-white/60 transition-all">Announcements</a>
+                            class="px-4 py-2 rounded-lg hover:text-mgicBlue hover:bg-white transition-all duration-200">Announcements</a>
                         <a href="#programs"
-                            class="px-4 py-2 rounded-lg hover:text-mgicBlue hover:bg-white/60 transition-all">Programs</a>
+                            class="px-4 py-2 rounded-lg hover:text-mgicBlue hover:bg-white transition-all duration-200">Programs</a>
                         <a href="#about"
-                            class="px-4 py-2 rounded-lg hover:text-mgicBlue hover:bg-white/60 transition-all">About
+                            class="px-4 py-2 rounded-lg hover:text-mgicBlue hover:bg-white transition-all duration-200">About
                             Us</a>
                         <a href="inquiry.php"
-                            class="px-4 py-2 rounded-lg hover:text-mgicBlue hover:bg-white/60 transition-all">Inquiry</a>
+                            class="ml-2 px-4 py-2 rounded-lg text-white bg-mgicOrange hover:bg-orange-600 shadow-sm shadow-mgicOrange/10 transition-all duration-200">Inquiry</a>
                     </nav>
                 </div>
 
+                <!-- Modern Overlay Dropdown Menu (Hidden by default) -->
                 <div id="mobileMenu"
-                    class="hidden absolute top-full right-0 left-0 mt-2 p-2 bg-white/90 backdrop-blur-md rounded-2xl border border-slate-200/80 shadow-lg shadow-slate-100/40 flex flex-col space-y-1 text-xs font-bold text-slate-600 z-50 transition-all duration-300">
+                    class="hidden absolute top-full left-4 right-4 md:hidden mt-3 p-3 bg-white/95 backdrop-blur-xl rounded-2xl border border-slate-200/80 shadow-xl shadow-slate-200/30 flex flex-col space-y-1 text-xs font-bold text-slate-600 z-50 transform origin-top opacity-0 scale-95 transition-all duration-300 ease-out">
                     <a href="#home"
-                        class="mobile-link px-4 py-3 rounded-xl hover:text-mgicBlue hover:bg-slate-50 transition-all"><i
-                            class="fa-solid fa-house mr-2 opacity-70"></i>Home</a>
+                        class="mobile-link flex items-center px-4 py-3.5 rounded-xl hover:text-mgicBlue hover:bg-slate-50 transition-all">
+                        <span
+                            class="w-7 h-7 rounded-lg bg-blue-50 text-mgicBlue flex items-center justify-center mr-3"><i
+                                class="fa-solid fa-house"></i></span> Home
+                    </a>
                     <a href="#announcements"
-                        class="mobile-link px-4 py-3 rounded-xl hover:text-mgicBlue hover:bg-slate-50 transition-all"><i
-                            class="fa-solid fa-bullhorn mr-2 opacity-70"></i>Announcements</a>
+                        class="mobile-link flex items-center px-4 py-3.5 rounded-xl hover:text-mgicBlue hover:bg-slate-50 transition-all">
+                        <span
+                            class="w-7 h-7 rounded-lg bg-orange-50 text-mgicOrange flex items-center justify-center mr-3"><i
+                                class="fa-solid fa-bullhorn"></i></span> Announcements
+                    </a>
                     <a href="#programs"
-                        class="mobile-link px-4 py-3 rounded-xl hover:text-mgicBlue hover:bg-slate-50 transition-all"><i
-                            class="fa-solid fa-graduation-cap mr-2 opacity-70"></i>Programs</a>
+                        class="mobile-link flex items-center px-4 py-3.5 rounded-xl hover:text-mgicBlue hover:bg-slate-50 transition-all">
+                        <span
+                            class="w-7 h-7 rounded-lg bg-slate-100 text-slate-700 flex items-center justify-center mr-3"><i
+                                class="fa-solid fa-graduation-cap"></i></span> Programs
+                    </a>
                     <a href="#about"
-                        class="mobile-link px-4 py-3 rounded-xl hover:text-mgicBlue hover:bg-slate-50 transition-all"><i
-                            class="fa-solid fa-circle-info mr-2 opacity-70"></i>About Us</a>
-                    <a href="inquiry.php"
-                        class="mobile-link px-4 py-3 rounded-xl text-white bg-mgicOrange hover:bg-orange-600 shadow-sm transition-all"><i
-                            class="fa-solid fa-paper-plane mr-2"></i>Inquiry</a>
+                        class="mobile-link flex items-center px-4 py-3.5 rounded-xl hover:text-mgicBlue hover:bg-slate-50 transition-all">
+                        <span
+                            class="w-7 h-7 rounded-lg bg-slate-100 text-slate-700 flex items-center justify-center mr-3"><i
+                                class="fa-solid fa-circle-info"></i></span> About Us
+                    </a>
+
+                    <div class="pt-2 border-t border-slate-100 mt-1">
+                        <a href="inquiry.php"
+                            class="mobile-link flex items-center justify-center w-full py-3.5 rounded-xl text-white bg-mgicOrange hover:bg-orange-600 shadow-md shadow-mgicOrange/10 transition-all">
+                            <i class="fa-solid fa-paper-plane mr-2"></i> Submit Academic Inquiry
+                        </a>
+                    </div>
                 </div>
             </div>
 
+            <!-- Toggle Script Logic -->
             <script>
                 const mobileMenuBtn = document.getElementById('mobileMenuBtn');
                 const mobileMenu = document.getElementById('mobileMenu');
-                const menuIcon = document.getElementById('menuIcon');
                 const mobileLinks = document.querySelectorAll('.mobile-link');
 
-                // Function to toggle menu state
-                function toggleMenu() {
-                    mobileMenu.classList.toggle('hidden');
+                const line1 = document.getElementById('line1');
+                const line2 = document.getElementById('line2');
+                const line3 = document.getElementById('line3');
 
-                    // Switch between hamburger bars icon and an 'X' close mark smoothly
-                    if (mobileMenu.classList.contains('hidden')) {
-                        menuIcon.className = "fa-solid fa-bars text-sm";
+                function toggleMenu() {
+                    const isHidden = mobileMenu.classList.contains('hidden');
+
+                    if (isHidden) {
+                        mobileMenu.classList.remove('hidden');
+                        setTimeout(() => {
+                            mobileMenu.classList.remove('opacity-0', 'scale-95');
+                            mobileMenu.classList.add('opacity-100', 'scale-100');
+                        }, 10);
+
+                        // Morph Hamburger to "X"
+                        line1.style.transform = "translateY(6px) rotate(45deg)";
+                        line2.style.opacity = "0";
+                        line3.style.transform = "translateY(-6px) rotate(-45deg)";
                     } else {
-                        menuIcon.className = "fa-solid fa-xmark text-sm";
+                        mobileMenu.classList.remove('opacity-100', 'scale-100');
+                        mobileMenu.classList.add('opacity-0', 'scale-95');
+
+                        // Revert "X" to Hamburger
+                        line1.style.transform = "none";
+                        line2.style.opacity = "1";
+                        line3.style.transform = "none";
+
+                        setTimeout(() => {
+                            mobileMenu.classList.add('hidden');
+                        }, 300);
                     }
                 }
 
                 mobileMenuBtn.addEventListener('click', toggleMenu);
 
-                // Automatically close the menu container when a user clicks any anchor link
+                // Close menu when clicking links
                 mobileLinks.forEach(link => {
                     link.addEventListener('click', () => {
                         if (!mobileMenu.classList.contains('hidden')) {
