@@ -1,15 +1,14 @@
 {
   "version": 2,
-  "builds": [
-    { "src": "*.php", "use": "vercel-php@0.9.0" },
-    { "src": "img/**", "use": "@vercel/static" },
-    { "src": "includes/**", "use": "@vercel/static" },
-    { "src": "PHPMailer/**", "use": "@vercel/static" }
-  ],
+  "functions": {
+    "api/*.php": {
+      "runtime": "vercel-php@0.7.2"
+    }
+  },
   "routes": [
     { "src": "/", "dest": "index.php" },
     { "src": "/inquiry", "dest": "inquiry.php" },
-    { "src": "/send_email", "dest": "send_email.php" },
-    { "src": "/(.*)", "dest": "$1" }
+    { "src": "/api/send_email", "dest": "api/send_email.php" },
+    { "src": "/(.*)", "dest": "/$1" }
   ]
 }
